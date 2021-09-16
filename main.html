@@ -200,16 +200,40 @@ Youtube貼り付けここまで -->
         </section>
 
         <!-- STAGE2クリア画面　ここから -->
-        <section v-if="clear['stage2']" v-bind:class="{isClear:clear['stage2']}"  class="section section--clear bg-color--gray">
+        <section v-if="clear['stage2']" && answer['stage2'][0] === 0 v-bind:class="{isClear:clear['stage2']}"  class="section section--clear bg-color--gray">
           <div class="container">
             <div class="clear-message">
-              <div class="clear-message__title">STAGE：2　クリア！</div>
-              <div class="clear-message__content">黒板の指示に従い、<br>
+              <div class="clear-message__title">STAGE：2　クリア！ルートA</div>
+              <div class="clear-message__content">パターンA<br>
                 次のステージの謎を解こう！</div>
                 <button v-on:click="nextStage('stage2')" onclick="location.href='#sectionStage3'" class="clear-message__btn btn">次のステージへ<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></button>
             </div>
           </div>
         </section>
+         <section v-if="clear['stage2'] && answer['stage2'][0] === 1" v-bind:class="{isClear:clear['stage2']}"  class="section section--clear bg-color--gray">
+          <div class="container">
+            <div class="clear-message">
+              <div class="clear-message__title">STAGE：2  クリア！ ルートB</div>
+              <div class="clear-message__content">パターンB<br>
+                さぁ先生を助けるため<br>
+                ３つステージの謎をとき、暗号を見つけ出そう！</div>
+              <button v-on:click="nextStage('stage2')" onclick="location.href='#sectionStage3'" class="clear-message__btn btn">次のステージへ<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></button>
+            </div>
+          </div>
+        </section>
+        <section v-if="clear['stage2'] && answer['stage2'][0] === 2" v-bind:class="{isClear:clear['stage2']}"  class="section section--clear bg-color--gray">
+          <div class="container">
+            <div class="clear-message">
+              <div class="clear-message__title">STAGE：１2 クリア！ ルートC</div>
+              <div class="clear-message__content">パターンC<br>
+                さぁ先生を助けるため<br>
+                ３つステージの謎をとき、暗号を見つけ出そう！</div>
+              <button v-on:click="nextStage('stage2')" onclick="location.href='#sectionStage3'" class="clear-message__btn btn">次のステージへ<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></button>
+            </div>
+          </div>
+        </section>
+
+
         <!-- STAGE2クリア画面　ここまで -->
       </div>
       <!-- STAGE2　ここまで -->
